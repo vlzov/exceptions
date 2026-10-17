@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронирование переговорных</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <h1>Бронирование переговорных комнат</h1>
+    <p class="subtitle">Офис «Кофе и Код»</p>
+</header>
+
+<main>
+    <section class="panel">
+        <h2>Комнаты</h2>
+        <ul id="rooms-list" class="rooms"></ul>
+    </section>
+
+    <section class="panel">
+        <h2>Новое бронирование</h2>
+        <form id="booking-form">
+            <label>Комната
+                <select id="room-select" required></select>
+            </label>
+            <label>Организатор
+                <input type="text" id="organizer" value="Тестовый пользователь" required>
+            </label>
+            <label>Название встречи
+                <input type="text" id="title" value="Тестовая встреча" required>
+            </label>
+            <label>Начало
+                <input type="datetime-local" id="start-time" required>
+            </label>
+            <label>Окончание
+                <input type="datetime-local" id="end-time" required>
+            </label>
+            <label>Участников
+                <input type="number" id="attendees" value="5">
+            </label>
+            <button type="submit">Забронировать</button>
+        </form>
+        <div id="form-message" class="message"></div>
+    </section>
+
+    <section class="panel wide">
+        <h2>Все бронирования</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th><th>Комната</th><th>Организатор</th><th>Встреча</th>
+                <th>Начало</th><th>Конец</th><th>Участников</th><th>Статус</th><th></th>
+            </tr>
+            </thead>
+            <tbody id="bookings-body"></tbody>
+        </table>
+    </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
